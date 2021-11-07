@@ -1,6 +1,12 @@
-export const setStudents = (colleges) => {
+export const setStudents = (students) => {
     return {
         type: "SET_STUDENTS",
-        payload: colleges,
+        payload: students,
+    };
+};
+export const setFilteredStudents = (filteredStudents) => {
+    return {
+        type: "SET_FILTEREDSTUDENTS",
+        payload: filteredStudents,
     };
 };
