@@ -10,3 +10,14 @@ export const setFilteredStudents = (filteredStudents) => {
         payload: filteredStudents,
     };
 };
+export const setIsSearching = (bool) => {
+    return {
+        type: "SET_ISSEARCHING",
+        payload: bool,
+    };
+};
+export const setStopAnimatingToTrue = () => {
+    return {
+        type: "SET_STOPANIMATINGTOTRUE",
+    };
+};

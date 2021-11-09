@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 // components
 import HeroSection from "../components/Course/HeroSection";
@@ -11,8 +11,11 @@ import { setStudents } from "../store/actions/studentsAction";
 
 function Course() {
     const { course } = useParams();
+
     const [collegeCode, setCollegeCode] = useState(" ");
+    const [programmeName, setProgrammeName] = useState(" ");
     const [programmePic, setProgrammePic] = useState(" ");
+    const [noResult, setNoResult] = useState(false);
     const dispatch = useDispatch();
 
     const splitWords = (sentence) => {
@@ -33,9 +36,10 @@ function Course() {
         const onMount = async () => {
             const data = await getAllStudentsForAProgramme(course);
 
-            if ((data.success = true)) {
+            if (data.success === true && data.data.length > 0) {
                 setCollegeCode(data.data[0].college["NameOfCollege"]);
                 setProgrammePic(data.data[0].program["Image"]);
+                setProgrammeName(data.data[0].program["NameOfProgram"]);
 
                 dispatch(
                     setStudents(
@@ -49,6 +53,9 @@ function Course() {
                         })
                     )
                 );
+            } else {
+                setProgrammeName("NO RESULT MATCH");
+                setNoResult(true);
             }
         };
         onMount();
@@ -60,13 +67,13 @@ function Course() {
             style={{ fontFamily: "Poppins", backgroundColor: "#333333" }}
         >
             <HeroSection
-                courseName={splitWords(course)[0]}
+                courseName={splitWords(programmeName)[0]}
                 collegeCode={collegeCode}
-                department={splitWords(course)[1]}
+                department={splitWords(programmeName)[1]}
                 programmePic={programmePic}
             />
 
-            <Gallery />
+            <Gallery noResult={noResult} />
         </div>
     );
 }

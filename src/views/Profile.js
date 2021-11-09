@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router";
+import { useHistory, useParams } from "react-router-dom";
 
 // import ada from "../assets/images/ada.png";
 import ImageModal from "../components/ImageModal";
@@ -74,6 +74,24 @@ export default function Profile() {
                     <div className="profile__contentSection2">
                         <div className="profile__contentSection2Left">
                             <h2 className="profile__contentSection2Header">
+                                MIDDLE NAME
+                            </h2>
+                            <h1 className="profile__contentSection2Body">
+                                {student?.MiddleName}
+                            </h1>
+                        </div>
+                        <div className="profile__contentSection2Right">
+                            <h2 className="profile__contentSection2Header">
+                                Matriculation Number
+                            </h2>
+                            <h1 className="profile__contentSection2Body">
+                                {student?.Matno}
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="profile__contentSection2">
+                        <div className="profile__contentSection2Left">
+                            <h2 className="profile__contentSection2Header">
                                 PROGRAM
                             </h2>
                             <h1 className="profile__contentSection2Body">
@@ -82,20 +100,75 @@ export default function Profile() {
                         </div>
                         <div className="profile__contentSection2Right">
                             <h2 className="profile__contentSection2Header">
-                                DATE OF BIRTH
+                                Student Email
                             </h2>
                             <h1 className="profile__contentSection2Body">
-                                18th January, 2000
+                                {student?.email?.toLowerCase()}
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="profile__contentSection2">
+                        <div className="profile__contentSection2Left">
+                            <h2 className="profile__contentSection2Header">
+                                Date of Birth
+                            </h2>
+                            <h1 className="profile__contentSection2Body">
+                                {student?.DOB !== null ? student?.DOB : "N/A"}
+                            </h1>
+                        </div>
+                        <div className="profile__contentSection2Right">
+                            <h2 className="profile__contentSection2Header">
+                                LinkedIn
+                            </h2>
+                            <h1 className="profile__contentSection2Body">
+                                {student?.linkedln !== ""
+                                    ? student?.linkedln
+                                    : "N/A"}
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="profile__contentSection2">
+                        <div className="profile__contentSection2Left">
+                            <h2 className="profile__contentSection2Header">
+                                Gender
+                            </h2>
+                            <h1 className="profile__contentSection2Body">
+                                {student?.gender ? student?.gender : "N/A"}
+                            </h1>
+                        </div>
+                        <div className="profile__contentSection2Right">
+                            <h2 className="profile__contentSection2Header">
+                                Instagram
+                            </h2>
+                            <h1 className="profile__contentSection2Body">
+                                {student?.IGhandle ? student?.IGhandle : "N/A"}
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="profile__contentSection2">
+                        <div className="profile__contentSection2Left">
+                            <h2 className="profile__contentSection2Header">
+                                Other Email
+                            </h2>
+                            <h1 className="profile__contentSection2Body">
+                                {student?.OtherEmail !== ""
+                                    ? student?.OtherEmail
+                                    : "N/A"}
+                            </h1>
+                        </div>
+                        <div className="profile__contentSection2Right">
+                            <h2 className="profile__contentSection2Header">
+                                Twitter
+                            </h2>
+                            <h1 className="profile__contentSection2Body">
+                                {student?.Twitter !== ""
+                                    ? student?.Twitter
+                                    : "N/A"}
                             </h1>
                         </div>
                     </div>
                     <div className="profile__contentSection3">
-                        <p>
-                            I don’t know what other bit of information we want
-                            to add here but I was thinking if we aren’t using
-                            this space for much, we could add that view of the
-                            signature you did in your first design here
-                        </p>
+                        <p>Bio: {student?.BIO !== "" ? student?.BIO : "N/A"}</p>
                     </div>
                     <div className="profile__contentSection4">
                         <div className="profile__contentSection4Text"></div>
@@ -103,7 +176,7 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-            <ImageModal />
+            <ImageModal imageSource={student?.ProfilePic} />
         </div>
     );
 }

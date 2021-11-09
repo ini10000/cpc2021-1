@@ -13,10 +13,10 @@ export default function Main() {
     return (
         <Switch>
             <Route exact path={ROUTES.HOME} component={Landing} />
+            <Route exact path={ROUTES.COURSE} component={Course} />
             <Route exact path={ROUTES.SEARCH} component={Search} />
 
             <Route exact path={ROUTES.COLLEGES} component={Colleges} />
-            <Route exact path={ROUTES.COURSE} component={Course} />
 
             <Route exact path={ROUTES.PROFILE} component={Profile} />
 

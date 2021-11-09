@@ -27,7 +27,6 @@ function StudentCard({ firstName, lastName, profilePic, matricNo }) {
                     alt="https://res.cloudinary.com/daan6nwbe/image/upload/v1634160023/WingsAwards2021/Nominees/16th_Set_Official_Logo_nbbvn9.png"
                     style={{ maxWidth: "100%", height: "auto" }}
                     onError={addDefaultSrc}
-                    on
                 />
                 <div
                     className=" cursor-pointer opacity-0 text-right flex justify-end  items-end absolute top-0 left-0 w-full h-full hover:opacity-100 transition duration-500 ease-out"

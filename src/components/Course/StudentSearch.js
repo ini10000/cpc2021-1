@@ -4,7 +4,11 @@ import { useDispatch } from "react-redux";
 
 // icons
 import { ReactComponent as SearchIcon } from "../../assets/svg/course-search-icon.svg";
-import { setFilteredStudents } from "../../store/actions/studentsAction";
+import {
+    setFilteredStudents,
+    setIsSearching,
+    setStopAnimatingToTrue,
+} from "../../store/actions/studentsAction";
 
 function StudentSearch() {
     const [studentName, setStudentName] = useState("");
@@ -13,6 +17,14 @@ function StudentSearch() {
 
     const searchForAStudent = (e) => {
         e.preventDefault();
+
+        if (studentName === "") {
+            dispatch(setIsSearching(false));
+        } else {
+            dispatch(setIsSearching(true));
+            dispatch(setStopAnimatingToTrue());
+        }
+
         var condition = new RegExp(studentName, "i");
 
         const filteredStudents = students.filter(function (el) {
@@ -22,7 +34,7 @@ function StudentSearch() {
                 return condition.test(el.lastName);
             }
         });
-        console.log(filteredStudents);
+
         dispatch(setFilteredStudents(filteredStudents));
     };
     return (
@@ -41,7 +53,16 @@ function StudentSearch() {
                 value={studentName}
                 onChange={(e) => {
                     setStudentName(e.target.value);
-                    var condition = new RegExp(studentName, "i");
+                    setTimeout(() => {}, 1000);
+
+                    if (e.target.value === "") {
+                        dispatch(setIsSearching(false));
+                    } else {
+                        dispatch(setIsSearching(true));
+                        dispatch(setStopAnimatingToTrue());
+                    }
+
+                    var condition = new RegExp(e.target.value, "i");
 
                     const filteredStudents = students.filter(function (el) {
                         if (condition.test(el.firstName)) {
@@ -50,7 +71,7 @@ function StudentSearch() {
                             return condition.test(el.lastName);
                         }
                     });
-                    console.log(filteredStudents);
+
                     dispatch(setFilteredStudents(filteredStudents));
                 }}
             />

@@ -1,4 +1,9 @@
-const initialState = { students: [], filteredStudents: [] };
+const initialState = {
+    students: [],
+    filteredStudents: [],
+    isSearching: false,
+    stopAnimating: false,
+};
 
 export const studentsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -8,6 +13,16 @@ export const studentsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 filteredStudents: [...action.payload],
+            };
+        case "SET_ISSEARCHING":
+            return {
+                ...state,
+                isSearching: action.payload,
+            };
+        case "SET_STOPANIMATINGTOTRUE":
+            return {
+                ...state,
+                stopAnimating: true,
             };
         default:
             return state;

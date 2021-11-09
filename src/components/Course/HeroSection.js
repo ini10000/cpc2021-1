@@ -9,6 +9,7 @@ import CourseSearch from "./CourseSearch.js";
 
 // css
 import "./HeroSection.css";
+import { useHistory } from "react-router-dom";
 
 // style
 const styles = {
@@ -26,9 +27,9 @@ const styles = {
         cursor: "pointer",
     },
     background: (image) => ({
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("${
-            image ? image : ""
-        }")`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)) ${
+            image !== " " ? `,url("${image}")` : ""
+        }`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -39,6 +40,7 @@ function HeroSection({ collegeCode, courseName, department, programmePic }) {
     const [startTransition, setstartTransition] = useState(false);
     const [showInput, setShowInput] = useState(false);
     const [course, setCourse] = useState("");
+    const history = useHistory();
 
     const disappear = "transition duration-200 ease-linear opacity-0";
     const reappear = "transition duration-200 ease-linear opacity-100";
@@ -62,7 +64,14 @@ function HeroSection({ collegeCode, courseName, department, programmePic }) {
                         className="HeroSection__department-code md:block hidden"
                         style={styles.departmentCode}
                     >
-                        <h1 className={showInput ? disappear : reappear}>
+                        <h1
+                            className={`${
+                                showInput ? disappear : reappear
+                            } cursor-pointer `}
+                            onClick={() =>
+                                history.push("/college/" + collegeCode)
+                            }
+                        >
                             {collegeCode}
                         </h1>
                     </li>

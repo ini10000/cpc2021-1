@@ -30,12 +30,12 @@
 }
 .profile__firstName,
 .profile__lastName {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 .profile__contentSection2 {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 .profile__btn {
     display: block;
@@ -53,6 +53,9 @@
 .profile__contentSection2Body {
     font-size: 15px;
     font-weight: bold;
+}
+.profile__contentSection2Right {
+    text-align: right;
 }
 .profile__contentSection3 p {
     font-size: 15px;
