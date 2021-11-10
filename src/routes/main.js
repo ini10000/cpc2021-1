@@ -6,9 +6,8 @@ import Landing from "../views/Landing";
 import SignIn from "../views/SignIn";
 import Search from "../views/Search";
 import Course from "../views/Course";
-import Colleges from "../views/Colleges";
 import Profile from "../views/Profile";
-import Error from "../views/Error";
+import Colleges from "../views/Colleges";
 
 export default function Main() {
     return (

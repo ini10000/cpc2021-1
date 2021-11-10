@@ -21,7 +21,7 @@ const Landing = () => {
             <h1 className="landing_text_2">
               Covenant University - Class of 2021 Yearbook
             </h1>
-            <h5 className="landing_text_3">The ---- Reckoning Set</h5>
+            <h5 className="landing_text_3">Pace Setters</h5>
             <p className="landing_text_4">Please enter your email address:</p>
             <div className="landing_input_container">
               <input

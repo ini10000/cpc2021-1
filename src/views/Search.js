@@ -20,7 +20,7 @@ const Search = () => {
 
   setInterval(function () {
     const now = new Date().getTime();
-    const distance = countDownDate - now;
+    const distance = now - countDownDate;
 
     setDays(Math.floor(distance / (1000 * 60 * 60 * 24)));
     setHours(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
