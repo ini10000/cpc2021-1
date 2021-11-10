@@ -6,12 +6,14 @@ import Header from "../components/Header";
 
 import "../assets/css/Colleges.css";
 
+
 export default function Colleges() {
     return (
         <div className="colleges">
-            <Header />
-            <Background />
-            <Cards />
+            <Header/>
+            <Background/>
+            <Cards/>
+
         </div>
     );
 }

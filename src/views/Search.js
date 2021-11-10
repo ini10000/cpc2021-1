@@ -6,7 +6,7 @@ import landingImage from "../assets/images/search.png";
 
 import { ReactComponent as SearchButton } from "../assets/svg/search.svg";
 
-import "../assets/css/search.css";
+import "../assets/css/Search.css";
 
 const Search = () => {
   // Set the date we're counting down to

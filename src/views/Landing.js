@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 
 import * as ROUTES from "../routes/routes";
 
-import "../assets/css/landing.css";
+import "../assets/css/Landing.css";
+import logoPng from '../assets/images/pacesetters-set-logo.png'; 
+
 
 const Landing = () => {
   return (
     <section className="landing_background">
       <div className="landing_container">
         <div className="landing_nav">
-          <p className="landing_text">LOGO</p>
+          <img className="landing_nav_logo" alt="set-logo" src={logoPng}/>
           <p className="landing_text">COVENANT UNIVERSITY - CLASS OF 2021</p>
         </div>
         <div className="landing_contents">
