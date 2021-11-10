@@ -39,6 +39,7 @@ body {
   font-family: "CerebriSansPro-Regular";
   font-weight: 400;
   overflow-x: hidden;
+  /* overflow-y: hidden; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
