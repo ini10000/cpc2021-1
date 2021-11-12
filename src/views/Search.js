@@ -6,7 +6,7 @@ import landingImage from "../assets/images/search.png";
 
 import { ReactComponent as SearchButton } from "../assets/svg/search.svg";
 
-import "../assets/css/search.css";
+import "../assets/css/Search.css";
 
 const Search = () => {
   // Set the date we're counting down to
@@ -20,7 +20,7 @@ const Search = () => {
 
   setInterval(function () {
     const now = new Date().getTime();
-    const distance = countDownDate - now;
+    const distance = now - countDownDate;
 
     setDays(Math.floor(distance / (1000 * 60 * 60 * 24)));
     setHours(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));

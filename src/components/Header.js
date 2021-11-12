@@ -6,11 +6,11 @@ import "../assets/css/Header.css";
 
 export default function Header() {
   return (
-    <div className="header">
-      <div className="header__wrapper">
+    <div className="header" id="header">
+      <div className="header__wrapper" id="header__wrapper">
         <div className="header__logo">
           <NavLink to="/" className="header__logo">
-            <h1>COE</h1>
+            <h1>HOME</h1>
           </NavLink>
         </div>
         <div className="header__middle">

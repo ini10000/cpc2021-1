@@ -1,7 +1,7 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import { BiMouse } from "react-icons/bi";
-import { Link } from "react-scroll";
+import {BiMouse} from "react-icons/bi";
+import {Link} from "react-scroll";
 
 import "../assets/css/Background.css";
 
@@ -15,19 +15,18 @@ export default function Background() {
                     </Fade>
                     <Fade right cascade>
                         <h1 className="background__header">
-                            College of Engineering
+                            Colleges
                         </h1>
                     </Fade>
                 </div>
                 <div smooth className="background__btn">
                     <Link
                         to="cards"
-                        style={{ cursor: "pointer" }}
+                        style={{cursor: "pointer"}}
                         smooth={true}
                         duration={500}
-                        spy={true}
-                    >
-                        <BiMouse className="background__icon" />
+                        spy={true}>
+                        <BiMouse className="background__icon"/>
                     </Link>
                 </div>
             </div>
