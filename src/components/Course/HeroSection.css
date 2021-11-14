@@ -1,15 +1,16 @@
 .HeroSection__container {
-  height: 40vh;
+    height: 40vh;
 }
 
 @media all and (min-width: 768px) {
-  .HeroSection__container {
-    height: 60vh;
-  }
+    .HeroSection__container {
+        height: 60vh;
+        /* background-color: #444444; */
+    }
 }
 
 @media all and (min-width: 1024px) {
-  .HeroSection__container {
-    height: 85vh;
-  }
+    .HeroSection__container {
+        height: 85vh;
+    }
 }
