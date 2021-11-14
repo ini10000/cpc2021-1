@@ -30,6 +30,12 @@ export default function Profile() {
         start();
     }, [dispatch, matricNo]);
 
+    const addDefaultSrc = (ev) => {
+        ev.target.height = "100%";
+        ev.target.src =
+            "https://res.cloudinary.com/daan6nwbe/image/upload/v1634160023/WingsAwards2021/Nominees/16th_Set_Official_Logo_nbbvn9.png";
+    };
+
     return (
         <div className="profile">
             <div className="profile__wrapper">
@@ -38,6 +44,7 @@ export default function Profile() {
                         onClick={() => handleClick()}
                         src={student?.ProfilePic}
                         alt="Profile__Image"
+                        onError={addDefaultSrc}
                     />
                 </div>
                 <div className="profile__content">
