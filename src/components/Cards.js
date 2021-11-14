@@ -19,8 +19,6 @@ export default function Cards() {
     const [dataIsLoaded, setDataIsLoaded] = useState(false);
     const [level, setLevel] = useState("");
 
-    console.log(level);
-
     async function getCollegeList() {
         let myData = await getColleges();
         if (myData.success) {

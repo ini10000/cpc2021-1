@@ -77,6 +77,7 @@ function HeroSection({ collegeCode, courseName, department, programmePic }) {
                         <h1
                             className={showInput ? disappear : reappear}
                             style={styles.settext}
+                            onClick={() => history.push("/search")}
                         >
                             THE 16TH SET
                         </h1>
